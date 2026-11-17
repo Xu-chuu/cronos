@@ -1,0 +1,39 @@
+{
+  "temas": [
+    {
+      "id": "segunda_guerra_mundial",
+      "palabras_clave": "segunda guerra mundial hitler alemania aliados 1939 1945 historia conflicto normandia",
+      "resumen": "La Segunda Guerra Mundial (1939-1945) fue el conflicto bélico más grande de la historia, enfrentando a las Potencias del Eje (Alemania, Italia y Japón) contra los Aliados (Reino Unido, Unión Soviética, Estados Unidos y Francia, entre otros).",
+      "profundizacion": "Comenzó con la invasión alemana a Polonia en septiembre de 1939 y terminó en 1945 tras la caída de Berlín y los bombardeos atómicos sobre Hiroshima y Nagasaki. Dejó más de 60 millones de fallecidos y dio origen a la ONU.",
+      "pregunta_seguimiento": "¿Te interesa saber más sobre alguna batalla en particular, las causas del conflicto o sus consecuencias políticas?"
+    },
+    {
+      "id": "inteligencia_artificial",
+      "palabras_clave": "inteligencia artificial ia aprendizaje por refuerzo machine learning redes neuronales chatbot",
+      "resumen": "La Inteligencia Artificial es la rama de la computación que crea sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como aprender, razonar y comprender el lenguaje.",
+      "profundizacion": "Dentro de la IA destaca el Aprendizaje por Refuerzo, donde un agente aprende tomando decisiones en un entorno mediante premios y castigos, justo como funciono yo en este momento.",
+      "pregunta_seguimiento": "¿Quieres que hablemos sobre cómo funciona el aprendizaje por refuerzo o sobre aplicaciones reales de la IA?"
+    },
+    {
+      "id": "programacion_python",
+      "palabras_clave": "programacion python codigo algoritmo software desarrollo programar variables funciones",
+      "resumen": "Python es un lenguaje de programación de alto nivel, muy valorado por su sintaxis limpia y legible, lo que lo hace ideal para ciencia de datos, inteligencia artificial y desarrollo web.",
+      "profundizacion": "Su gran fortaleza es su ecosistema de librerías como NumPy, Scikit-learn, PyTorch y Pandas, que permiten construir modelos complejos con pocas líneas de código.",
+      "pregunta_seguimiento": "¿Estás programando algún proyecto actualmente o quieres ayuda con algún concepto específico de Python?"
+    },
+    {
+      "id": "sistema_solar_universo",
+      "palabras_clave": "espacio universo planetas sistema solar tierra marte sol estrellas astronomia",
+      "resumen": "El Sistema Solar está formado por el Sol y ocho planetas que orbitan a su alrededor, divididos en planetas rocosos (Mercurio, Venus, Tierra y Marte) y gigantes gaseosos o helados (Júpiter, Saturno, Urano y Neptuno).",
+      "profundizacion": "Júpiter es tan masivo que cabrían más de 1,300 Tierras en su interior, mientras que Marte es el principal candidato para futuras misiones tripuladas debido a la presencia de hielo en sus polos.",
+      "pregunta_seguimiento": "¿Qué planeta o fenómeno del universo te llama más la atención?"
+    },
+    {
+      "id": "tecnicas_estudio",
+      "palabras_clave": "tarea estudiar examen aprender concentracion resumen universidad proyecto ayuda academica",
+      "resumen": "Para resolver tareas o preparar exámenes de forma efectiva, lo mejor es dividir el tema en bloques pequeños y aplicar técnicas activas como explicar el concepto con tus propias palabras.",
+      "profundizacion": "El método Pomodoro (25 minutos de enfoque total y 5 de descanso) junto con la repetición espaciada mejora notablemente la retención de información a largo plazo.",
+      "pregunta_seguimiento": "¿De qué materia o tema es la tarea que necesitas resolver hoy?"
+    }
+  ]
+}
