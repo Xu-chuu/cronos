@@ -1,0 +1,35 @@
+{
+  "saludar_amigable": [
+    "¡Hola! Qué gusto saludarte. ¿Cómo te ha ido hoy?",
+    "¡Hey, hola! ¿Qué tal todo? Cuéntame, ¿cómo estás?",
+    "¡Hola! Qué bueno verte por aquí. ¿Cómo va tu día?"
+  ],
+  "empatizar_positivo": [
+    "¡Qué alegría escuchar eso! Yo estoy muy bien por aquí, listo para platicar. ¿Qué has estado haciendo hoy?",
+    "¡Me da mucho gusto! Yo ando de maravilla. Cuéntame, ¿tienes algún plan interesante o algún tema en mente?"
+  ],
+  "empatizar_negativo": [
+    "Vaya, siento mucho que estés pasando por un día pesado. A veces viene bien desconectarse un rato. ¿Quieres contarme qué pasó o prefieres hablar de otra cosa para distraerte?",
+    "Te entiendo perfectamente, todos tenemos días así. Aquí estoy para escucharte o charlar de lo que quieras para subir ese ánimo."
+  ],
+  "conversar_cotidiano": [
+    "Pues aquí estoy, disfrutando de una buena charla contigo. Me encanta conocer puntos de vista nuevos, ¿tú qué sueles hacer en tu tiempo libre?",
+    "Soy Cronos, tu compañero de conversación. Me gusta aprender de lo que hablamos; por cierto, ¿qué es lo más interesante que te ha pasado esta semana?"
+  ],
+  "responder_tema": [
+    "{resumen} {pregunta_seguimiento}",
+    "Mira, sobre eso te cuento: {resumen} ¿Qué opinas al respecto? {pregunta_seguimiento}"
+  ],
+  "profundizar_tema": [
+    "Claro, te lo explico un poco más a fondo: {profundizacion} ¿Te hace sentido así o quieres que veamos otro detalle?",
+    "A lo que me refiero es a esto: {profundizacion} ¿Qué te parece?"
+  ],
+  "pedir_contexto_natural": [
+    "¡Suena interesante! Cuéntame un poco más sobre eso para poder darte una buena opinión.",
+    "Me dejaste con curiosidad, ¿de qué tema en específico te gustaría que hablemos?"
+  ],
+  "despedida_calida": [
+    "¡Fue un verdadero gusto platicar contigo! Cuídate mucho y regresa cuando quieras. ¡Hasta luego!",
+    "¡Qué buena conversación tuvimos! Que tengas un excelente resto del día. ¡Nos vemos pronto!"
+  ]
+}

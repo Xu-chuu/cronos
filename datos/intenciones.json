@@ -1,0 +1,93 @@
+{
+  "intents": [
+    {
+      "tag": "saludo",
+      "patterns": [
+        "hola",
+        "buenos dias",
+        "buenas tardes",
+        "buenas noches",
+        "que tal",
+        "hey",
+        "holaa",
+        "que onda"
+      ]
+    },
+    {
+      "tag": "estado_animo_positivo",
+      "patterns": [
+        "bien y tu",
+        "muy bien gracias",
+        "todo bien",
+        "excelente",
+        "genial y tu",
+        "aqui todo tranquilo",
+        "super bien"
+      ]
+    },
+    {
+      "tag": "estado_animo_negativo",
+      "patterns": [
+        "mas o menos",
+        "un poco cansado",
+        "aburrido",
+        "mal",
+        "estresado",
+        "con mucho trabajo",
+        "algo triste"
+      ]
+    },
+    {
+      "tag": "charla_cotidiana",
+      "patterns": [
+        "que haces",
+        "que cuentas",
+        "como te llamas",
+        "quien eres",
+        "de que quieres hablar",
+        "nada nuevo",
+        "aqui pasando el rato",
+        "que opinas"
+      ]
+    },
+    {
+      "tag": "pregunta_tema",
+      "patterns": [
+        "hablame sobre",
+        "que es",
+        "explicame",
+        "ayudame con mi tarea",
+        "quiero saber sobre",
+        "cuentame de",
+        "sabes algo de",
+        "tengo una duda sobre"
+      ]
+    },
+    {
+      "tag": "profundizar",
+      "patterns": [
+        "como asi",
+        "cuentame mas",
+        "explica mejor",
+        "por que",
+        "y eso por que",
+        "dime mas",
+        "no entendi",
+        "en serio"
+      ]
+    },
+    {
+      "tag": "despedida",
+      "patterns": [
+        "adios",
+        "hasta luego",
+        "nos vemos",
+        "chao",
+        "me tengo que ir",
+        "gracias por charlar",
+        "hasta pronto",
+        "bye"
+      ]
+    }
+  ]
+}
