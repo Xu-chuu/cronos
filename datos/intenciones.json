@@ -10,7 +10,11 @@
         "que tal",
         "hey",
         "holaa",
-        "que onda"
+        "que onda",
+        "hola que tal",
+        "saludos",
+        "hey hola",
+        "hola como estas"
       ]
     },
     {
@@ -22,7 +26,13 @@
         "excelente",
         "genial y tu",
         "aqui todo tranquilo",
-        "super bien"
+        "super bien",
+        "estoy bien",
+        "me siento bien",
+        "todo excelente",
+        "de maravilla",
+        "muy contento",
+        "feliz"
       ]
     },
     {
@@ -34,7 +44,14 @@
         "mal",
         "estresado",
         "con mucho trabajo",
-        "algo triste"
+        "algo triste",
+        "no muy bien",
+        "me siento mal",
+        "cansado",
+        "triste",
+        "estresado",
+        "frustrado",
+        "preocupado"
       ]
     },
     {
@@ -47,7 +64,27 @@
         "de que quieres hablar",
         "nada nuevo",
         "aqui pasando el rato",
-        "que opinas"
+        "que opinas",
+        "por ahora ver una pelicula",
+        "voy a ver una peli",
+        "quiero ver una pelicula",
+        "estoy viendo una serie",
+        "me gusta ver peliculas",
+        "hoy voy a descansar",
+        "estoy pensando en ver algo",
+        "quiero ver algo en netflix",
+        "voy a ver una pelicula basada en la vida real",
+        "me gustaria ver una pelicula",
+        "estoy aburrido en casa",
+        "no se que hacer",
+        "estoy en casa",
+        "hoy no hice mucho",
+        "estoy descansando",
+        "viendo una serie",
+        "escuchando musica",
+        "leyendo un libro",
+        "salir con amigos",
+        "ir al cine"
       ]
     },
     {
@@ -60,7 +97,18 @@
         "quiero saber sobre",
         "cuentame de",
         "sabes algo de",
-        "tengo una duda sobre"
+        "tengo una duda sobre",
+        "que sabes de",
+        "como funciona",
+        "que significa",
+        "dame informacion sobre",
+        "necesito ayuda con",
+        "puedes explicarme",
+        "que opinas sobre",
+        "recomiendame algo sobre",
+        "me puedes recomendar",
+        "sabes contar historias",
+        "conoces sobre"
       ]
     },
     {
@@ -73,7 +121,17 @@
         "y eso por que",
         "dime mas",
         "no entendi",
-        "en serio"
+        "en serio",
+        "y luego",
+        "y despues",
+        "que paso despues",
+        "a que te refieres",
+        "puedes darme mas detalles",
+        "quiero saber mas",
+        "dame un ejemplo",
+        "y eso",
+        "como es eso",
+        "explicame mejor"
       ]
     },
     {
@@ -86,7 +144,14 @@
         "me tengo que ir",
         "gracias por charlar",
         "hasta pronto",
-        "bye"
+        "bye",
+        "hasta la vista",
+        "me voy",
+        "tengo que salir",
+        "buenas noches",
+        "nos hablamos luego",
+        "cuídate",
+        "hasta mañana"
       ]
     }
   ]

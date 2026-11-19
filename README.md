@@ -1,7 +1,7 @@
 #  Cronos — Agente Conversacional con Aprendizaje por Refuerzo y PNL
 
 **Proyecto Académico — Inteligencia Artificial (Grupo # 18)**  
-Sistema conversacional híbrido en Python que combina **Aprendizaje por Refuerzo (Q-Learning)** para la gestión estratégica del diálogo y **Procesamiento del Lenguaje Natural (PNL)** junto con **Groq (Llama 3.3)** para la generación de respuestas fluidas y naturales en tiempo real.
+Sistema conversacional híbrido en Python que combina **Aprendizaje por Refuerzo (Q-Learning)** para la gestión estratégica del diálogo y **Procesamiento del Lenguaje Natural (PNL)** junto con **Groq** para la generación de respuestas fluidas y naturales en tiempo real.
 
 ---
 
