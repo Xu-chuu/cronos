@@ -30,6 +30,8 @@ class EntornoDialogo:
         self.tiene_tema_activo = False
         self.ultima_intencion = "ninguna"
         self.es_ambigua = False
+        # --- NUEVO: Memoria de la última acción del agente ---
+        self.ultima_accion_agente = None
 
         if self.modo_entrenamiento:
             self.simulador.reiniciar()
@@ -119,6 +121,12 @@ class EntornoDialogo:
             else:
                 recompensa -= 20.0
                 self.terminado = True
+
+        # --- NUEVO: Penalización por repetir la misma acción ---
+        if self.ultima_accion_agente is not None and accion == self.ultima_accion_agente:
+            recompensa -= 6.0  # Castigo por repetirse
+        
+        self.ultima_accion_agente = accion  # Guardar la acción actual para la próxima
 
         if not self.terminado and self.modo_entrenamiento:
             respuesta_sim = self.simulador.responder(accion)

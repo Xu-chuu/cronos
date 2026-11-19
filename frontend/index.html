@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronos - Grupo #18</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #e5ddd5; margin: 0; display: flex; justify-content: center; height: 100vh; }
+        .chat-container { width: 100%; max-width: 700px; background: white; display: flex; flex-direction: column; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .header { background: #075e54; color: white; padding: 18px; text-align: center; font-size: 1.2em; font-weight: bold; }
+        .messages { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); }
+        .msg { max-width: 80%; padding: 12px 15px; border-radius: 8px; line-height: 1.5; font-size: 0.95em; position: relative; }
+        .msg.user { background: #dcf8c6; align-self: flex-end; border-bottom-right-radius: 0; }
+        .msg.bot { background: #ffffff; align-self: flex-start; border-bottom-left-radius: 0; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+        .tech-info { font-size: 0.75em; color: #888; margin-top: 8px; border-top: 1px dashed #ccc; padding-top: 5px; font-family: monospace; }
+        .input-area { display: flex; padding: 15px; background: #f0f0f0; border-top: 1px solid #ccc; }
+        input { flex: 1; padding: 12px; border: none; border-radius: 20px; outline: none; font-size: 1em; padding-left: 15px; }
+        button { background: #075e54; color: white; border: none; padding: 10px 20px; margin-left: 10px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #054c44; }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="header">🤖 Cronos AI - Grupo # 18</div>
+    <div class="messages" id="chat">
+        <div class="msg bot">¡Hola! Soy Cronos. ¿De qué te gustaría hablar hoy?</div>
+    </div>
+    <div class="input-area">
+        <input type="text" id="userInput" placeholder="Escribe un mensaje..." onkeypress="if(event.key === 'Enter') enviarMensaje()">
+        <button onclick="enviarMensaje()">Enviar</button>
+    </div>
+</div>
+
+<script>
+    const chat = document.getElementById('chat');
+    const input = document.getElementById('userInput');
+
+    function agregarMensaje(texto, tipo, detalles = "") {
+        const div = document.createElement('div');
+        div.className = `msg ${tipo}`;
+        let html = `<div>${texto}</div>`;
+        if (detalles) html += `<div class="tech-info">${detalles}</div>`;
+        div.innerHTML = html;
+        chat.appendChild(div);
+        chat.scrollTop = chat.scrollHeight;
+    }
+
+    async function enviarMensaje() {
+        const texto = input.value.trim();
+        if (!texto) return;
+        
+        agregarMensaje(texto, 'user');
+        input.value = '';
+
+        try {
+            // Conexión con FastAPI usando 127.0.0.1 en lugar de localhost
+            const respuesta = await fetch('http://127.0.0.1:8000/chatear', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ texto: texto })
+            });
+            const data = await respuesta.json();
+            
+            // Muestra la respuesta y las métricas técnicas abajo
+            agregarMensaje(data.respuesta, 'bot', data.detalles);
+        } catch (error) {
+            agregarMensaje("Error: Asegúrate de tener encendido el Backend (FastAPI).", 'bot');
+        }
+    }
+</script>
+
+</body>
+</html>
