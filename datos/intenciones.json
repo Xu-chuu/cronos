@@ -3,155 +3,67 @@
     {
       "tag": "saludo",
       "patterns": [
-        "hola",
-        "buenos dias",
-        "buenas tardes",
-        "buenas noches",
-        "que tal",
-        "hey",
-        "holaa",
-        "que onda",
-        "hola que tal",
-        "saludos",
-        "hey hola",
-        "hola como estas"
+        "hola", "buenos dias", "buenas tardes", "buenas noches", "que tal", "hey", "holaa", "que onda", 
+        "hola que tal", "saludos", "hey hola", "hola como estas", "buen dia", "que hubo", "hola amigo"
       ]
     },
     {
       "tag": "estado_animo_positivo",
       "patterns": [
-        "bien y tu",
-        "muy bien gracias",
-        "todo bien",
-        "excelente",
-        "genial y tu",
-        "aqui todo tranquilo",
-        "super bien",
-        "estoy bien",
-        "me siento bien",
-        "todo excelente",
-        "de maravilla",
-        "muy contento",
-        "feliz"
+        "bien y tu", "muy bien gracias", "todo bien", "excelente", "genial y tu", "aqui todo tranquilo", 
+        "super bien", "estoy bien", "me siento bien", "todo excelente", "de maravilla", "muy contento", 
+        "feliz", "me siento genial", "todo perfecto", "estoy contento", "genial"
       ]
     },
     {
       "tag": "estado_animo_negativo",
       "patterns": [
-        "mas o menos",
-        "un poco cansado",
-        "aburrido",
-        "mal",
-        "estresado",
-        "con mucho trabajo",
-        "algo triste",
-        "no muy bien",
-        "me siento mal",
-        "cansado",
-        "triste",
-        "estresado",
-        "frustrado",
-        "preocupado"
+        "mas o menos", "un poco cansado", "aburrido", "mal", "estresado", "con mucho trabajo", "algo triste", 
+        "no muy bien", "me siento mal", "cansado", "triste", "estresado", "frustrado", "preocupado", 
+        "me siento cansado", "tuve un mal dia", "estoy agotado", "no doy mas"
       ]
     },
     {
       "tag": "charla_cotidiana",
       "patterns": [
-        "que haces",
-        "que cuentas",
-        "como te llamas",
-        "quien eres",
-        "de que quieres hablar",
-        "nada nuevo",
-        "aqui pasando el rato",
-        "que opinas",
-        "por ahora ver una pelicula",
-        "voy a ver una peli",
-        "quiero ver una pelicula",
-        "estoy viendo una serie",
-        "me gusta ver peliculas",
-        "hoy voy a descansar",
-        "estoy pensando en ver algo",
-        "quiero ver algo en netflix",
-        "voy a ver una pelicula basada en la vida real",
-        "me gustaria ver una pelicula",
-        "estoy aburrido en casa",
-        "no se que hacer",
-        "estoy en casa",
-        "hoy no hice mucho",
-        "estoy descansando",
-        "viendo una serie",
-        "escuchando musica",
-        "leyendo un libro",
-        "salir con amigos",
-        "ir al cine"
+        "que haces", "que cuentas", "como te llamas", "quien eres", "de que quieres hablar", "nada nuevo", 
+        "aqui pasando el rato", "que opinas", "por ahora ver una pelicula", "voy a ver una peli", 
+        "quiero ver una pelicula", "estoy viendo una serie", "me gusta ver peliculas", "hoy voy a descansar", 
+        "estoy pensando en ver algo", "quiero ver algo en netflix", "voy a ver una pelicula basada en la vida real", 
+        "me gustaria ver una pelicula", "estoy aburrido en casa", "no se que hacer", "estoy en casa", 
+        "hoy no hice mucho", "estoy descansando", "viendo una serie", "escuchando musica", "leyendo un libro", 
+        "salir con amigos", "ir al cine", "tengo antojo de algo dulce", "quiero cocinar algo", "que postre hago", 
+        "estoy pensando en hacer un postre", "que me recomiendas cocinar", "que serie veo", "que pelicula veo",
+        "que musica escucho", "tengo tiempo libre", "estoy en mi casa"
       ]
     },
     {
       "tag": "pregunta_tema",
       "patterns": [
-        "hablame sobre",
-        "que es",
-        "explicame",
-        "ayudame con mi tarea",
-        "quiero saber sobre",
-        "cuentame de",
-        "sabes algo de",
-        "tengo una duda sobre",
-        "que sabes de",
-        "como funciona",
-        "que significa",
-        "dame informacion sobre",
-        "necesito ayuda con",
-        "puedes explicarme",
-        "que opinas sobre",
-        "recomiendame algo sobre",
-        "me puedes recomendar",
-        "sabes contar historias",
-        "conoces sobre"
+        "hablame sobre", "que es", "explicame", "ayudame con mi tarea", "quiero saber sobre", "cuentame de", 
+        "sabes algo de", "tengo una duda sobre", "que sabes de", "como funciona", "que significa", 
+        "dame informacion sobre", "necesito ayuda con", "puedes explicarme", "que opinas sobre", 
+        "recomiendame algo sobre", "me puedes recomendar", "sabes contar historias", "conoces sobre",
+        "que es un agujero negro", "que es la inteligencia artificial", "como funciona python", 
+        "cuentame de historia", "que es el sistema solar", "dame una receta", "que peliculas hay", 
+        "que series me recomiendas", "que libros hay", "que es la segunda guerra mundial"
       ]
     },
     {
       "tag": "profundizar",
       "patterns": [
-        "como asi",
-        "cuentame mas",
-        "explica mejor",
-        "por que",
-        "y eso por que",
-        "dime mas",
-        "no entendi",
-        "en serio",
-        "y luego",
-        "y despues",
-        "que paso despues",
-        "a que te refieres",
-        "puedes darme mas detalles",
-        "quiero saber mas",
-        "dame un ejemplo",
-        "y eso",
-        "como es eso",
-        "explicame mejor"
+        "como asi", "cuentame mas", "explica mejor", "por que", "y eso por que", "dime mas", "no entendi", 
+        "en serio", "y luego", "y despues", "que paso despues", "a que te refieres", "puedes darme mas detalles", 
+        "quiero saber mas", "dame un ejemplo", "y eso", "como es eso", "explicame mejor", "que mas", 
+        "dame mas informacion", "quiero entender mejor", "no me quedo claro"
       ]
     },
     {
       "tag": "despedida",
       "patterns": [
-        "adios",
-        "hasta luego",
-        "nos vemos",
-        "chao",
-        "me tengo que ir",
-        "gracias por charlar",
-        "hasta pronto",
-        "bye",
-        "hasta la vista",
-        "me voy",
-        "tengo que salir",
-        "buenas noches",
-        "nos hablamos luego",
-        "cuídate",
-        "hasta mañana"
+        "adios", "hasta luego", "nos vemos", "chao", "me tengo que ir", "gracias por charlar", "hasta pronto", 
+        "bye", "hasta la vista", "me voy", "tengo que salir", "buenas noches", "nos hablamos luego", 
+        "cuídate", "hasta mañana", "fue un gusto", "me despido", "nos vemos luego"
       ]
     }
   ]

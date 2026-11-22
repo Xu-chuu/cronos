@@ -11,8 +11,8 @@ from sklearn.pipeline import make_pipeline
 class ComprensionLenguaje:
     """
     Módulo avanzado de PNL:
-    1. Clasifica la intención del usuario (saludo, ánimo, charla, pregunta, profundizar, despedida).
-    2. Busca conocimiento relevante usando TF-IDF + Similitud del Coseno.
+    1. Clasifica la intención del usuario.
+    2. Busca conocimiento relevante usando palabras clave y Similitud del Coseno.
     3. Mantiene memoria del tema actual de conversación.
     """
 
@@ -40,7 +40,6 @@ class ComprensionLenguaje:
             if unicodedata.category(c) != "Mn"
         )
         texto = re.sub(r"[^a-z0-9\s]", "", texto)
-        # Reduce letras repetidas excesivas (ej. "holaaa" -> "hola")
         texto = re.sub(r"(.)\1{2,}", r"\1", texto)
         return texto
 
@@ -74,13 +73,23 @@ class ComprensionLenguaje:
         self.matriz_conocimiento = self.vectorizador_conocimiento.fit_transform(corpus)
 
     def buscar_tema(self, texto_limpio):
-        """Encuentra el tema más cercano usando Similitud del Coseno."""
+        """Encuentra el tema más cercano priorizando palabras clave exactas."""
+        # 1. Búsqueda por palabra clave exacta (más precisa)
+        palabras_usuario = texto_limpio.split()
+        for tema in self.temas:
+            palabras_clave = tema["palabras_clave"].split()
+            for p in palabras_usuario:
+                if p in palabras_clave:
+                    self.tema_actual = tema
+                    return tema, 1.0  # Similitud alta para forzar el tema
+
+        # 2. Si no hay coincidencia exacta, usamos Similitud del Coseno (respaldo)
         vector_usuario = self.vectorizador_conocimiento.transform([texto_limpio])
         similitudes = cosine_similarity(vector_usuario, self.matriz_conocimiento)[0]
         mejor_indice = similitudes.argmax()
         mejor_score = float(similitudes[mejor_indice])
 
-        if mejor_score >= 0.12:
+        if mejor_score >= 0.15:
             self.tema_actual = self.temas[mejor_indice]
             return self.tema_actual, round(mejor_score, 3)
 
@@ -89,7 +98,20 @@ class ComprensionLenguaje:
     def analizar_mensaje(self, mensaje_usuario):
         texto_limpio = self._limpiar_texto(mensaje_usuario)
         if not texto_limpio:
-            return {"intencion": "charla_cotidiana", "tema": self.tema_actual, "similitud": 0.0, "es_ambigua": False}
+            return {"intencion": "charla_cotidiana", "tema": None, "similitud": 0.0, "es_ambigua": False, "mensaje_original": mensaje_usuario}
+
+        # --- FILTRO PARA FRASES CORTAS ---
+        palabras = texto_limpio.split()
+        if len(palabras) <= 4:
+            palabras_clave_charla = ["si", "no", "ok", "bien", "mal", "y tu", "tu", "ah", "oh", "nop"]
+            if any(p in texto_limpio for p in palabras_clave_charla):
+                return {
+                    "intencion": "charla_cotidiana",
+                    "tema": None,
+                    "similitud": 0.0,
+                    "es_ambigua": False,
+                    "mensaje_original": mensaje_usuario
+                }
 
         # 1. Predecir intención
         probs = self.clasificador.predict_proba([texto_limpio])[0]
@@ -97,10 +119,9 @@ class ComprensionLenguaje:
         confianza = float(probs[idx_max])
         intencion = self.clasificador.classes_[idx_max]
 
-        # 2. Buscar si menciona algún tema de la base de conocimiento
+        # 2. Buscar tema
         tema_encontrado, similitud = self.buscar_tema(texto_limpio)
 
-        # Si detecta un tema claro (ej. "segunda guerra mundial"), prioriza 'pregunta_tema'
         if tema_encontrado and intencion not in ["despedida", "profundizar"]:
             intencion = "pregunta_tema"
         elif confianza < 0.25 and not tema_encontrado:
@@ -111,5 +132,6 @@ class ComprensionLenguaje:
             "confianza": round(confianza, 3),
             "tema": self.tema_actual,
             "similitud": similitud,
-            "es_ambigua": len(texto_limpio.split()) <= 2 and intencion == "pregunta_tema" and not tema_encontrado
+            "es_ambigua": len(texto_limpio.split()) <= 2 and intencion == "pregunta_tema" and not tema_encontrado,
+            "mensaje_original": mensaje_usuario
         }

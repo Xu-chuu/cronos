@@ -2,6 +2,7 @@ import argparse
 from entorno.entorno_dialogo import EntornoDialogo
 from agente.q_learning import AgenteQLearning
 from utilidades.metricas import graficar_entrenamiento
+from utilidades.feedback import obtener_recompensa_extra
 
 
 def entrenar(episodios=5000):

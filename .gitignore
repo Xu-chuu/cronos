@@ -2,3 +2,5 @@
 __pycache__/
 *.pyc
 .env
+datos/feedback.json
+datos/historial_conversacion.json

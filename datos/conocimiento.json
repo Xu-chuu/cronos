@@ -11,7 +11,7 @@
       "id": "inteligencia_artificial",
       "palabras_clave": "inteligencia artificial ia aprendizaje por refuerzo machine learning redes neuronales chatbot",
       "resumen": "La Inteligencia Artificial es la rama de la computación que crea sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como aprender, razonar y comprender el lenguaje.",
-      "profundizacion": "Dentro de la IA destaca el Aprendizaje por Refuerzo, donde un agente aprende tomando decisiones en un entorno mediante premios y castigos, justo como funciono yo en este momento.",
+      "profundizacion": "Dentro de la IA destaca el Aprendizaje por Refuerzo, donde un agente aprende tomando decisiones en un entorno mediante premios y castigos, justo como funciona nuestro proyecto Cronos.",
       "pregunta_seguimiento": "¿Quieres que hablemos sobre cómo funciona el aprendizaje por refuerzo o sobre aplicaciones reales de la IA?"
     },
     {
@@ -34,6 +34,153 @@
       "resumen": "Para resolver tareas o preparar exámenes de forma efectiva, lo mejor es dividir el tema en bloques pequeños y aplicar técnicas activas como explicar el concepto con tus propias palabras.",
       "profundizacion": "El método Pomodoro (25 minutos de enfoque total y 5 de descanso) junto con la repetición espaciada mejora notablemente la retención de información a largo plazo.",
       "pregunta_seguimiento": "¿De qué materia o tema es la tarea que necesitas resolver hoy?"
+    },
+    {
+      "id": "recomendaciones_cine",
+      "palabras_clave": "pelicula cine recomiendame ver filmes estrenos accion comedia terror",
+      "resumen": "El cine es un arte que combina narrativa, imagen y sonido. Existen géneros como acción, comedia, drama, ciencia ficción, terror y animación.",
+      "profundizacion": "Si buscas ciencia ficción, 'Interestelar' o 'Matrix' son clásicos. Para drama, 'El Padrino' o 'La lista de Schindler'. Para reír, cualquier comedia de Jim Carrey o Adam Sandler.",
+      "pregunta_seguimiento": "¿Qué género te gusta más: acción, comedia, terror o ciencia ficción?"
+    },
+    {
+      "id": "recomendaciones_series",
+      "palabras_clave": "serie netflix recomiendame ver capitulos television plataformas",
+      "resumen": "Las series permiten desarrollar tramas complejas y personajes profundos a lo largo de múltiples episodios, ideales para maratones.",
+      "profundizacion": "Te recomiendo 'Stranger Things' (misterio), 'The Crown' (drama histórico), 'Breaking Bad' (crimen) y 'Ted Lasso' (comedia).",
+      "pregunta_seguimiento": "¿Prefieres algo para reírte o algo que te mantenga en suspenso?"
+    },
+    {
+      "id": "reposteria_recetas",
+      "palabras_clave": "postre reposteria receta dulce pastel galleta cocinar hornear",
+      "resumen": "La repostería es el arte de preparar alimentos dulces. Requiere precisión en las medidas, pero es muy relajante y creativa.",
+      "profundizacion": "Para empezar, un crumble de frutas es ideal: mezcla frutas con azúcar, cubre con harina, mantequilla y avena, y hornea 20 minutos. También puedes probar cupcakes o galletas de avena.",
+      "pregunta_seguimiento": "¿Tienes algún ingrediente en casa o prefieres una receta que no requiera horno?"
+    },
+    {
+      "id": "musica_generos",
+      "palabras_clave": "musica cancion recomiendame escuchar artista genero ritmo",
+      "resumen": "La música es un lenguaje universal que influye en nuestro estado de ánimo. Escuchar música relajante reduce el cortisol (la hormona del estrés).",
+      "profundizacion": "Si buscas relajarte, prueba con música clásica (Mozart, Debussy) o lo-fi. Para energía, rock o pop. Para concentrarte, bandas sonoras de películas o música instrumental.",
+      "pregunta_seguimiento": "¿Qué tipo de música sueles escuchar cuando estás feliz?"
+    },
+    {
+      "id": "libros_literatura",
+      "palabras_clave": "libro leer recomiendame novela literatura autor poesia",
+      "resumen": "La lectura es una de las actividades más completas para la mente: mejora la concentración, reduce el estrés y amplía el vocabulario.",
+      "profundizacion": "Clásicos como 'Cien años de soledad' (García Márquez) o '1984' (Orwell). Si te gusta la ciencia ficción, 'Dune' o 'El marciano'. Para algo ligero, cualquier novela de Agatha Christie.",
+      "pregunta_seguimiento": "¿Prefieres novelas de ficción o libros con hechos reales?"
+    },
+    {
+      "id": "salud_ejercicio",
+      "palabras_clave": "salud ejercicio deporte correr gimnasio dieta alimentacion",
+      "resumen": "El ejercicio regular es fundamental para la salud física y mental. Ayuda a prevenir enfermedades cardiovasculares, mejora el ánimo y fortalece los músculos.",
+      "profundizacion": "Se recomienda al menos 30 minutos de actividad moderada al día, como caminar rápido, nadar o andar en bicicleta. Combinarlo con una dieta equilibrada potencia los resultados.",
+      "pregunta_seguimiento": "¿Qué tipo de ejercicio disfrutas más: cardio, pesas o deportes en equipo?"
+    },
+    {
+      "id": "historia_antigua",
+      "palabras_clave": "historia antigua egipto roma grecia mesopotamia civilizaciones",
+      "resumen": "Las primeras civilizaciones surgieron en Mesopotamia, Egipto, el Valle del Indo y China. Desarrollaron la escritura, la agricultura y las primeras leyes.",
+      "profundizacion": "Egipto destacó por sus pirámides y faraones; Grecia por su filosofía y democracia; Roma por su derecho y arquitectura que aún influye en el mundo moderno.",
+      "pregunta_seguimiento": "¿Te interesa más la historia de Egipto, Grecia o Roma?"
+    },
+    {
+      "id": "matematicas_basicas",
+      "palabras_clave": "matematicas algebra calculo suma resta multiplicacion division",
+      "resumen": "Las matemáticas son el lenguaje universal de la ciencia. Estudian patrones, estructuras y relaciones entre cantidades.",
+      "profundizacion": "El álgebra usa letras para representar números desconocidos, mientras que el cálculo estudia el cambio y el movimiento. Son herramientas esenciales para la física y la ingeniería.",
+      "pregunta_seguimiento": "¿Necesitas ayuda con algún concepto matemático en particular?"
+    },
+    {
+      "id": "psicologia_emociones",
+      "palabras_clave": "psicologia emociones tristeza alegria enojo miedo ansiedad",
+      "resumen": "La psicología estudia la mente y el comportamiento humano. Las emociones son respuestas complejas que nos ayudan a adaptarnos al entorno.",
+      "profundizacion": "La tristeza nos invita a reflexionar, el miedo nos protege del peligro, y la alegría fortalece los vínculos sociales. Reconocerlas es el primer paso para gestionarlas.",
+      "pregunta_seguimiento": "¿Hay alguna emoción que te cueste manejar o sobre la que quieras saber más?"
+    },
+    {
+      "id": "astronomia_agujeros_negros",
+      "palabras_clave": "agujero negro astronomia gravedad espacio galaxia",
+      "resumen": "Un agujero negro es una región del espacio donde la gravedad es tan fuerte que nada, ni siquiera la luz, puede escapar de ella.",
+      "profundizacion": "Se forman cuando estrellas muy masivas colapsan. El primero fotografiado fue el del centro de la galaxia M87, gracias al trabajo del Telescopio del Horizonte de Eventos.",
+      "pregunta_seguimiento": "¿Te gustaría saber cómo se detectan los agujeros negros si son invisibles?"
+    },
+    {
+      "id": "cocina_internacional",
+      "palabras_clave": "cocina receta internacional comida plato tipico gastronomia",
+      "resumen": "La gastronomía mundial refleja la historia y cultura de cada región. Cada país tiene platos típicos que lo representan.",
+      "profundizacion": "Italia es famosa por la pizza y la pasta, México por los tacos, Japón por el sushi, y Perú por el ceviche. La comida es también una forma de viajar sin moverse de casa.",
+      "pregunta_seguimiento": "¿Qué tipo de comida te gustaría aprender a preparar?"
+    },
+    {
+      "id": "futbol_mundial",
+      "palabras_clave": "futbol mundial copa messi maradona deporte balon gol",
+      "resumen": "El fútbol es el deporte más popular del mundo. La Copa Mundial de la FIFA se celebra cada cuatro años y es el evento deportivo más visto del planeta.",
+      "profundizacion": "Argentina ganó el Mundial de Qatar 2022 de la mano de Lionel Messi. El máximo goleador histórico de los mundiales es Miroslav Klose, y Pelé es el único jugador que ha ganado tres copas.",
+      "pregunta_seguimiento": "¿Tienes algún equipo o jugador favorito?"
+    },
+    {
+      "id": "basketball_nba",
+      "palabras_clave": "basket basketball nba baloncesto jordan lebron lakers",
+      "resumen": "El baloncesto es un deporte de equipo donde el objetivo es anotar puntos lanzando un balón por un aro. La NBA es la liga más prestigiosa del mundo.",
+      "profundizacion": "Michael Jordan es considerado el mejor jugador de la historia con 6 anillos, mientras que LeBron James es el máximo anotador histórico de la NBA.",
+      "pregunta_seguimiento": "¿Prefieres el baloncesto universitario o la NBA profesional?"
+    },
+    {
+      "id": "cultura_pop",
+      "palabras_clave": "cultura pop anime manga marvel dc superheroes comics",
+      "resumen": "La cultura pop abarca tendencias, personajes y medios de entretenimiento masivo que influyen en la sociedad, como el cine de superhéroes o el anime japonés.",
+      "profundizacion": "El Universo Cinematográfico de Marvel (MCU) es la franquicia más taquillera de la historia, mientras que el anime ha ganado millones de seguidores globales con títulos como 'Naruto' o 'One Piece'.",
+      "pregunta_seguimiento": "¿Eres más de Marvel, de DC o prefieres el anime?"
+    },
+    {
+      "id": "videojuegos_esports",
+      "palabras_clave": "videojuegos esports minecraft fortnite league of legends gamer",
+      "resumen": "Los videojuegos son una forma de arte interactiva y la industria del entretenimiento más grande del mundo. Los esports son competiciones profesionales de videojuegos.",
+      "profundizacion": "Juegos como Minecraft fomentan la creatividad, mientras que League of Legends o Valorant son pilares de los deportes electrónicos con millones de dólares en premios.",
+      "pregunta_seguimiento": "¿Qué tipo de juegos te gustan más: de estrategia, de disparos o de aventura?"
+    },
+    {
+      "id": "mitologia_griega",
+      "palabras_clave": "mitologia griega dioses zeus atenea olimpo heroes",
+      "resumen": "La mitología griega es el conjunto de historias y leyendas sobre dioses, héroes y criaturas de la antigua Grecia, que explican el origen del mundo y la naturaleza humana.",
+      "profundizacion": "Zeus era el rey de los dioses, Atenea la diosa de la sabiduría, y héroes como Hércules o Aquiles protagonizaron epopeyas que aún hoy inspiran películas y libros.",
+      "pregunta_seguimiento": "¿Cuál es tu mito o dios griego favorito?"
+    },
+    {
+      "id": "filosofia_etica",
+      "palabras_clave": "filosofia etica moral platon aristoteles socrates pensamiento",
+      "resumen": "La filosofía es el estudio de las cuestiones fundamentales sobre la existencia, el conocimiento, la moral y la mente.",
+      "profundizacion": "Sócrates sentó las bases del método científico, Platón fundó la Academia y Aristóteles desarrolló la lógica. La ética estudia qué acciones son correctas o incorrectas.",
+      "pregunta_seguimiento": "¿Te interesa más la filosofía antigua o la filosofía moderna?"
+    },
+    {
+      "id": "historia_guerras_mundiales",
+      "palabras_clave": "primera guerra mundial trincheras 1914 1918 conflicto",
+      "resumen": "La Primera Guerra Mundial (1914-1918) fue un conflicto global centrado en Europa, conocido por la guerra de trincheras y el uso masivo de artillería.",
+      "profundizacion": "Comenzó tras el asesinato del archiduque Francisco Fernando. Dejó millones de muertos y reconfiguró el mapa de Europa, sentando las bases para la Segunda Guerra Mundial.",
+      "pregunta_seguimiento": "¿Sabías que la Primera Guerra Mundial fue el primer conflicto donde se usaron tanques y aviones de combate de forma masiva?"
+    },
+    {
+      "id": "revolucion_industrial",
+      "palabras_clave": "revolucion industrial maquina vapor fabrica 1800 tecnologia",
+      "resumen": "La Revolución Industrial fue un período de transformación económica y social que comenzó en el siglo XVIII en Gran Bretaña.",
+      "profundizacion": "La invención de la máquina de vapor permitió mecanizar la producción, lo que llevó a la creación de fábricas y al crecimiento de las ciudades, pero también a duras condiciones laborales.",
+      "pregunta_seguimiento": "¿Te interesa más el impacto tecnológico o el impacto social de esta revolución?"
+    },
+    {
+      "id": "cambio_climatico",
+      "palabras_clave": "cambio climatico calentamiento global ecologia medio ambiente",
+      "resumen": "El cambio climático es la variación del clima de la Tierra causada principalmente por la emisión de gases de efecto invernadero debido a la actividad humana.",
+      "profundizacion": "Provoca el derretimiento de los polos, eventos climáticos extremos y la pérdida de biodiversidad. La solución requiere energías renovables y reducción de emisiones.",
+      "pregunta_seguimiento": "¿Qué acciones crees que son más efectivas para cuidar el medio ambiente?"
+    },
+    {
+      "id": "peliculas_zombies",
+      "palabras_clave": "zombie horda pelicula terror muertos vivos apocalipsis",
+      "resumen": "El cine de zombies es un subgénero del terror que explora el colapso de la sociedad y la supervivencia humana frente a muertos vivientes.",
+      "profundizacion": "Películas clásicas incluyen 'La noche de los muertos vivientes', '28 días después', 'Guerra Mundial Z' y 'Train to Busan'. Las series más famosas son 'The Walking Dead' y 'La horda'.",
+      "pregunta_seguimiento": "¿Prefieres el terror clásico o el apocalipsis moderno con mucha acción?"
     }
   ]
 }
