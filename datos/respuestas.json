@@ -2,19 +2,24 @@
   "saludar_amigable": [
     "¡Hola! Qué gusto saludarte. ¿Cómo te ha ido hoy?",
     "¡Hey, hola! ¿Qué tal todo? Cuéntame, ¿cómo estás?",
-    "¡Hola! Qué bueno verte por aquí. ¿Cómo va tu día?"
+    "¡Hola! Qué bueno verte por aquí. ¿Cómo va tu día?",
+    "¡Saludos! ¿En qué puedo ayudarte o de qué quieres hablar hoy?"
   ],
   "empatizar_positivo": [
     "¡Qué alegría escuchar eso! Yo estoy muy bien por aquí, listo para platicar. ¿Qué has estado haciendo hoy?",
-    "¡Me da mucho gusto! Yo ando de maravilla. Cuéntame, ¿tienes algún plan interesante o algún tema en mente?"
+    "¡Me da mucho gusto! Yo ando de maravilla. Cuéntame, ¿tienes algún plan interesante o algún tema en mente?",
+    "¡Excelente! Me contagias esa buena energía. ¿Hay algo nuevo que quieras compartir?"
   ],
   "empatizar_negativo": [
     "Vaya, siento mucho que estés pasando por un día pesado. A veces viene bien desconectarse un rato. ¿Quieres contarme qué pasó o prefieres hablar de otra cosa para distraerte?",
-    "Te entiendo perfectamente, todos tenemos días así. Aquí estoy para escucharte o charlar de lo que quieras para subir ese ánimo."
+    "Te entiendo perfectamente, todos tenemos días así. Aquí estoy para escucharte o charlar de lo que quieras para subir ese ánimo.",
+    "Lamento escuchar eso. Si quieres hablar de ello, aquí estoy. Si no, podemos hablar de algo más ligero, como películas o música."
   ],
   "conversar_cotidiano": [
     "Pues aquí estoy, disfrutando de una buena charla contigo. Me encanta conocer puntos de vista nuevos, ¿tú qué sueles hacer en tu tiempo libre?",
-    "Soy Cronos, tu compañero de conversación. Me gusta aprender de lo que hablamos; por cierto, ¿qué es lo más interesante que te ha pasado esta semana?"
+    "Soy Cronos, tu compañero de conversación. Me gusta aprender de lo que hablamos; por cierto, ¿qué es lo más interesante que te ha pasado esta semana?",
+    "¡Suena bien! Cuéntame más sobre eso. ¿Qué es lo que más te gusta hacer para relajarte?",
+    "Entiendo. A veces no saber qué hacer es una buena oportunidad para descubrir algo nuevo. ¿Te gustaría que te recomiende una película o un libro?"
   ],
   "responder_tema": [
     "{resumen} {pregunta_seguimiento}",
@@ -22,14 +27,17 @@
   ],
   "profundizar_tema": [
     "Claro, te lo explico un poco más a fondo: {profundizacion} ¿Te hace sentido así o quieres que veamos otro detalle?",
-    "A lo que me refiero es a esto: {profundizacion} ¿Qué te parece?"
+    "A lo que me refiero es a esto: {profundizacion} ¿Qué te parece?",
+    "Aquí va un dato extra: {profundizacion} ¿Te gustaría saber algo más sobre esto?"
   ],
   "pedir_contexto_natural": [
     "¡Suena interesante! Cuéntame un poco más sobre eso para poder darte una buena opinión.",
-    "Me dejaste con curiosidad, ¿de qué tema en específico te gustaría que hablemos?"
+    "Me dejaste con curiosidad, ¿de qué tema en específico te gustaría que hablemos?",
+    "No estoy seguro de haber entendido del todo. ¿Podrías darme un poco más de contexto?"
   ],
   "despedida_calida": [
     "¡Fue un verdadero gusto platicar contigo! Cuídate mucho y regresa cuando quieras. ¡Hasta luego!",
-    "¡Qué buena conversación tuvimos! Que tengas un excelente resto del día. ¡Nos vemos pronto!"
+    "¡Qué buena conversación tuvimos! Que tengas un excelente resto del día. ¡Nos vemos pronto!",
+    "¡Hasta luego! Gracias por la charla, espero que tengas un gran día."
   ]
 }

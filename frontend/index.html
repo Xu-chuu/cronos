@@ -5,67 +5,258 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cronos - Grupo #18</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #e5ddd5; margin: 0; display: flex; justify-content: center; height: 100vh; }
-        .chat-container { width: 100%; max-width: 700px; background: white; display: flex; flex-direction: column; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .header { background: #075e54; color: white; padding: 18px; text-align: center; font-size: 1.2em; font-weight: bold; }
+        body { font-family: 'Segoe UI', Tahoma, Verdana, sans-serif; background-color: #e5ddd5; margin: 0; display: flex; justify-content: center; height: 100vh; }
+        .chat-container { width: 100%; max-width: 700px; background: white; display: flex; flex-direction: column; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative; }
+        .header { background: #075e54; color: white; padding: 18px; text-align: center; font-size: 1.2em; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        .btn-historial { background: #128c7e; color: white; border: none; padding: 8px 15px; border-radius: 15px; cursor: pointer; font-size: 0.8em; font-weight: normal; margin-left: 5px; }
+        .btn-historial:hover { background: #0d6b5f; }
         .messages { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); }
         .msg { max-width: 80%; padding: 12px 15px; border-radius: 8px; line-height: 1.5; font-size: 0.95em; position: relative; }
         .msg.user { background: #dcf8c6; align-self: flex-end; border-bottom-right-radius: 0; }
         .msg.bot { background: #ffffff; align-self: flex-start; border-bottom-left-radius: 0; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
-        .tech-info { font-size: 0.75em; color: #888; margin-top: 8px; border-top: 1px dashed #ccc; padding-top: 5px; font-family: monospace; }
+        .tech-info { font-size: 0.72em; color: #888; margin-top: 8px; border-top: 1px dashed #ccc; padding-top: 5px; font-family: monospace; }
+        .fuente { font-size: 0.72em; margin-top: 6px; padding: 3px 8px; border-radius: 10px; display: inline-block; }
+        .fuente.conocimiento { background: #d4edda; color: #155724; }
+        .fuente.llm { background: #fff3cd; color: #856404; }
+        .fuente.nosabe { background: #f8d7da; color: #721c24; }
+        .feedback { margin-top: 8px; display: flex; gap: 6px; }
+        .feedback button { background: #f0f0f0; border: 1px solid #ccc; border-radius: 12px; padding: 3px 10px; cursor: pointer; font-size: 0.85em; }
+        .feedback button:hover { background: #ddd; }
+        .feedback button.activo { background: #075e54; color: white; border-color: #075e54; }
         .input-area { display: flex; padding: 15px; background: #f0f0f0; border-top: 1px solid #ccc; }
         input { flex: 1; padding: 12px; border: none; border-radius: 20px; outline: none; font-size: 1em; padding-left: 15px; }
-        button { background: #075e54; color: white; border: none; padding: 10px 20px; margin-left: 10px; border-radius: 20px; cursor: pointer; font-weight: bold; }
-        button:hover { background: #054c44; }
+        .send-btn { background: #075e54; color: white; border: none; padding: 10px 20px; margin-left: 10px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+        .send-btn:hover { background: #054c44; }
+
+        /* Panel de historial de chats */
+        .panel-historial { position: fixed; right: 0; top: 0; height: 100vh; width: 350px; background: #fff; box-shadow: -4px 0 15px rgba(0,0,0,0.2); transform: translateX(100%); transition: transform 0.3s; z-index: 100; padding: 20px; overflow-y: auto; }
+        .panel-historial.abierto { transform: translateX(0); }
+        .cabecera-historial { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        
+        /* Estilos de la lista de chats */
+        .item-sesion { padding: 12px; border-bottom: 1px solid #eee; border-radius: 8px; margin-bottom: 5px; transition: background 0.2s; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .item-sesion:hover { background: #f0f0f0; }
+        .item-sesion.activo { background: #e7f3ff; border-left: 4px solid #075e54; }
+        .item-sesion .info-chat { flex: 1; }
+        .item-sesion .titulo { font-weight: bold; color: #075e54; font-size: 0.9em; }
+        .item-sesion .fecha { font-size: 0.75em; color: #999; }
+        
+        /* Botón de eliminar chat */
+        .btn-eliminar-chat { background: #ffe6e6; color: #c0392b; border: none; padding: 5px 8px; border-radius: 8px; cursor: pointer; font-size: 0.9em; margin-left: 10px; transition: background 0.2s; }
+        .btn-eliminar-chat:hover { background: #ffcccc; }
+
+        .btn-nuevo-chat { width: 100%; padding: 12px; background: #075e54; color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; margin-bottom: 15px; font-size: 1em; }
+        .btn-nuevo-chat:hover { background: #054c44; }
     </style>
 </head>
 <body>
 
 <div class="chat-container">
-    <div class="header">🤖 Cronos AI - Grupo # 18</div>
+    <div class="header">
+        <span>🤖 Cronos AI - Grupo # 18</span>
+        <div>
+            <button class="btn-historial" onclick="iniciarNuevoChat()">➕ Nuevo</button>
+            <button class="btn-historial" onclick="alternarHistorial()">📜 Chats</button>
+        </div>
+    </div>
     <div class="messages" id="chat">
         <div class="msg bot">¡Hola! Soy Cronos. ¿De qué te gustaría hablar hoy?</div>
     </div>
     <div class="input-area">
-        <input type="text" id="userInput" placeholder="Escribe un mensaje..." onkeypress="if(event.key === 'Enter') enviarMensaje()">
-        <button onclick="enviarMensaje()">Enviar</button>
+        <input type="text" id="entradaUsuario" placeholder="Escribe un mensaje..." onkeypress="if(event.key === 'Enter') enviarMensaje()">
+        <button class="send-btn" onclick="enviarMensaje()">Enviar</button>
     </div>
+</div>
+
+<!-- Panel de historial de chats -->
+<div class="panel-historial" id="panelHistorial">
+    <div class="cabecera-historial">
+        <h3>💬 Tus Chats</h3>
+        <button onclick="alternarHistorial()" style="background:#555;color:white;border:none;padding:5px 10px;border-radius:10px;cursor:pointer;">✖</button>
+    </div>
+    <button class="btn-nuevo-chat" onclick="iniciarNuevoChat()">➕ Crear Nuevo Chat</button>
+    <div id="listaSesiones"></div>
 </div>
 
 <script>
     const chat = document.getElementById('chat');
-    const input = document.getElementById('userInput');
+    const entrada = document.getElementById('entradaUsuario');
+    
+    // Variable global para saber en qué chat estamos
+    let sesionActual = "chat_" + Date.now(); 
+    
+    // --- SOLUCIÓN AL BUG DE LOS BOTONES ---
+    // Guardamos los datos del mensaje aquí en lugar de pasarlos por el HTML
+    let datosFeedback = {}; 
 
-    function agregarMensaje(texto, tipo, detalles = "") {
+    function agregarMensaje(texto, tipo, detalles = "", fuente = null, mensajeOriginal = "", accionRl = "") {
         const div = document.createElement('div');
         div.className = `msg ${tipo}`;
+        
         let html = `<div>${texto}</div>`;
+        
+        if (fuente) {
+            const fuentes = {
+                "conocimiento": "🟢 Basado en mi base de conocimiento",
+                "llm": "🟡 Generado por LLM (conocimiento general)",
+                "nosabe": "🔴 No tengo información sobre eso"
+            };
+            html += `<div><span class="fuente ${fuente}">${fuentes[fuente] || fuente}</span></div>`;
+        }
+        
         if (detalles) html += `<div class="tech-info">${detalles}</div>`;
+        
+        if (tipo === 'bot' && mensajeOriginal) {
+            // Creamos un ID único para este mensaje
+            const idBoton = "btn_" + Date.now() + "_" + Math.floor(Math.random() * 1000);
+            datosFeedback[idBoton] = { mensaje: mensajeOriginal, respuesta: texto, accion: accionRl };
+
+            html += `<div class="feedback">
+                <button onclick="calificar(this, 1, '${idBoton}')">👍</button>
+                <button onclick="calificar(this, -1, '${idBoton}')">👎</button>
+            </div>`;
+        }
+        
         div.innerHTML = html;
         chat.appendChild(div);
         chat.scrollTop = chat.scrollHeight;
     }
 
+    async function calificar(boton, calificacion, idBoton) {
+        const padre = boton.parentElement;
+        padre.querySelectorAll('button').forEach(b => b.classList.remove('activo'));
+        boton.classList.add('activo');
+        
+        const datos = datosFeedback[idBoton];
+        if (!datos) return;
+
+        try {
+            await fetch('http://127.0.0.1:8000/feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    mensaje: datos.mensaje, 
+                    respuesta: datos.respuesta,
+                    accion_rl: datos.accion, 
+                    calificacion: calificacion
+                })
+            });
+        } catch (e) { console.error("Error al enviar feedback:", e); }
+    }
+
     async function enviarMensaje() {
-        const texto = input.value.trim();
+        const texto = entrada.value.trim();
         if (!texto) return;
         
         agregarMensaje(texto, 'user');
-        input.value = '';
+        entrada.value = '';
 
         try {
-            // Conexión con FastAPI usando 127.0.0.1 en lugar de localhost
             const respuesta = await fetch('http://127.0.0.1:8000/chatear', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ texto: texto })
+                body: JSON.stringify({ 
+                    texto: texto,
+                    sesion_id: sesionActual 
+                })
             });
-            const data = await respuesta.json();
+            const datos = await respuesta.json();
             
-            // Muestra la respuesta y las métricas técnicas abajo
-            agregarMensaje(data.respuesta, 'bot', data.detalles);
+            agregarMensaje(datos.respuesta, 'bot', datos.detalles, datos.fuente, texto, datos.accion_rl);
         } catch (error) {
-            agregarMensaje("Error: Asegúrate de tener encendido el Backend (FastAPI).", 'bot');
+            agregarMensaje("Error: Asegúrate de tener encendido el Backend.", 'bot');
+        }
+    }
+
+    // --- LÓGICA DE SESIONES (CHATS) ---
+    async function alternarHistorial() {
+        const panel = document.getElementById('panelHistorial');
+        panel.classList.toggle('abierto');
+        if (panel.classList.contains('abierto')) {
+            await cargarListaSesiones();
+        }
+    }
+
+    async function cargarListaSesiones() {
+        const contenedor = document.getElementById('listaSesiones');
+        contenedor.innerHTML = '<p style="text-align:center;color:#999;">Cargando...</p>';
+        
+        try {
+            const res = await fetch('http://127.0.0.1:8000/sesiones');
+            const datos = await res.json();
+            contenedor.innerHTML = '';
+            
+            if (datos.sesiones.length === 0) {
+                contenedor.innerHTML = '<p style="text-align:center;color:#999;">No hay chats guardados</p>';
+                return;
+            }
+
+            datos.sesiones.sort((a, b) => new Date(b.fecha_inicio) - new Date(a.fecha_inicio));
+
+            datos.sesiones.forEach(sesion => {
+                const div = document.createElement('div');
+                div.className = `item-sesion ${sesion.id === sesionActual ? 'activo' : ''}`;
+                const fecha = new Date(sesion.fecha_inicio).toLocaleString();
+                
+                div.innerHTML = `
+                    <div class="info-chat">
+                        <div class="titulo">💬 Chat (${sesion.total_mensajes} mensajes)</div>
+                        <div class="fecha">${fecha}</div>
+                    </div>
+                    <button class="btn-eliminar-chat" onclick="eliminarChat(event, '${sesion.id}')">🗑️</button>
+                `;
+                
+                div.onclick = (e) => {
+                    if(e.target.tagName !== 'BUTTON') {
+                        cargarChatEspecifico(sesion.id);
+                    }
+                };
+                contenedor.appendChild(div);
+            });
+        } catch (e) { console.error("Error al cargar sesiones:", e); }
+    }
+
+    async function eliminarChat(event, idSesion) {
+        event.stopPropagation();
+        if (!confirm("¿Estás seguro de que quieres eliminar este chat? Esta acción no se puede deshacer.")) return;
+        
+        try {
+            await fetch(`http://127.0.0.1:8000/historial/${idSesion}`, { method: 'DELETE' });
+            if (idSesion === sesionActual) {
+                iniciarNuevoChat();
+            }
+            await cargarListaSesiones();
+        } catch (e) {
+            console.error("Error al eliminar chat:", e);
+            alert("Hubo un error al eliminar el chat.");
+        }
+    }
+
+    function iniciarNuevoChat() {
+        sesionActual = "chat_" + Date.now();
+        document.getElementById('chat').innerHTML = '<div class="msg bot">¡Hola! Soy Cronos. ¿De qué te gustaría hablar hoy?</div>';
+        document.getElementById('panelHistorial').classList.remove('abierto');
+    }
+
+    async function cargarChatEspecifico(idSesion) {
+        sesionActual = idSesion;
+        const chatDiv = document.getElementById('chat');
+        chatDiv.innerHTML = '<p style="text-align:center; color:#888;">Cargando conversación...</p>';
+        
+        try {
+            const res = await fetch(`http://127.0.0.1:8000/historial/${idSesion}`);
+            const datos = await res.json();
+            
+            chatDiv.innerHTML = ''; 
+            
+            datos.mensajes.forEach(m => {
+                const tipo = m.rol === 'usuario' ? 'user' : 'bot';
+                agregarMensaje(m.texto, tipo); 
+            });
+            
+            document.getElementById('panelHistorial').classList.remove('abierto');
+        } catch (e) {
+            chatDiv.innerHTML = '<p style="color:red;">Error al cargar el chat.</p>';
         }
     }
 </script>

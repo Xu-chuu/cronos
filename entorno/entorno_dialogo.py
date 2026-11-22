@@ -1,4 +1,5 @@
 from entorno.simulador_usuario import SimuladorUsuario
+from utilidades.feedback import obtener_recompensa_extra
 
 
 class EntornoDialogo:
@@ -30,8 +31,8 @@ class EntornoDialogo:
         self.tiene_tema_activo = False
         self.ultima_intencion = "ninguna"
         self.es_ambigua = False
-        # --- NUEVO: Memoria de la última acción del agente ---
         self.ultima_accion_agente = None
+        self.ultimo_mensaje = ""
 
         if self.modo_entrenamiento:
             self.simulador.reiniciar()
@@ -41,21 +42,18 @@ class EntornoDialogo:
         return self.obtener_estado()
 
     def obtener_estado(self):
-        # --- CORRECCIÓN: Usamos string en vez de tupla para que la tabla Q sea más legible ---
         tiene_tema = "con_tema" if self.tiene_tema_activo else "sin_tema"
         return f"{self.ultima_intencion}|{tiene_tema}|{self.es_ambigua}"
 
     def _actualizar_estado(self, analisis):
         self.ultima_intencion = analisis["intencion"]
         self.es_ambigua = analisis.get("es_ambigua", False)
-        
-        # --- CORRECCIÓN CRÍTICA ---
-        # Actualizamos el tema activo según el análisis actual, NO acumulamos
+        self.ultimo_mensaje = analisis.get("mensaje_original", "")
+
         tema_actual = analisis.get("tema")
         if tema_actual is not None:
             self.tiene_tema_activo = True
         else:
-            # Si la intención NO está relacionada con temas, reseteamos
             intenciones_sin_tema = ["saludo", "despedida", "estado_animo_positivo", 
                                     "estado_animo_negativo", "charla_cotidiana"]
             if self.ultima_intencion in intenciones_sin_tema:
@@ -73,7 +71,11 @@ class EntornoDialogo:
 
         if accion == "saludar_amigable":
             if self.ultima_intencion == "saludo":
-                recompensa += 12.0
+                # --- NUEVO: Castigo si saluda después del turno 2 ---
+                if self.turnos > 2:
+                    recompensa -= 5.0
+                else:
+                    recompensa += 12.0
             else:
                 recompensa -= 10.0
 
@@ -122,11 +124,14 @@ class EntornoDialogo:
                 recompensa -= 20.0
                 self.terminado = True
 
-        # --- NUEVO: Penalización por repetir la misma acción ---
+        # Penalización por repetir la misma acción
         if self.ultima_accion_agente is not None and accion == self.ultima_accion_agente:
-            recompensa -= 6.0  # Castigo por repetirse
-        
-        self.ultima_accion_agente = accion  # Guardar la acción actual para la próxima
+            recompensa -= 15.0 
+
+        self.ultima_accion_agente = accion
+
+        # Feedback del usuario (👍/👎)
+        recompensa += obtener_recompensa_extra(self.ultimo_mensaje, accion)
 
         if not self.terminado and self.modo_entrenamiento:
             respuesta_sim = self.simulador.responder(accion)
